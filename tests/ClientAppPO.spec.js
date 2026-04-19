@@ -16,6 +16,6 @@ test('Client app login', async ({ page }) => {
 
     const dashboardPage = new DashBoardPage(page);
     await dashboardPage.searchProduct(productName);
-    await dashboardPage.goToCartPage();
+    await dashboardPage.goToOrdersPage();
 
 });

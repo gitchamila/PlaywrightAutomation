@@ -9,12 +9,14 @@ class LoginPage {
 
     async navigateToLoginPage() {
         await this.page.goto("https://rahulshettyacademy.com/client/");
+        await this.page.waitForLoadState('networkidle');
     }
         
     async validateLogin(username, password) {
         await this.username.fill(username);
         await this.password.fill(password);
         await this.signInBtn.click();
+         await this.page.waitForLoadState('networkidle');
     }
 }
 
