@@ -1,11 +1,16 @@
 class DashBoardPage {
     constructor(page) {
         this.page = page;
+        this.logo = page.getByText('Automation');
         this.products = page.locator('.card-body');
         this.productsText = page.locator(".card-body b");
         this.cart =  page.locator("[routerlink*='cart']");
-      
 
+    }
+
+    async verifyDashboardPage(){
+        await expect(this.logo).toBeVisible();
+        console.log("Dashboard page >>> Successful");
     }
 
     async searchProductAndAddToCart (productName){
